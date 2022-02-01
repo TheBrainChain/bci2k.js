@@ -103,7 +103,7 @@ export default class BCI2K_DataConnection {
 
             connection.websocket.onopen = () => {
                 connection.onconnect();
-                console.log("Connected");
+                console.log("Connected ");
                 resolve();
             };
 
