@@ -2,6 +2,7 @@ const BCI2K = require("../dist");
 
 let bci = new BCI2K.bciOperator();
 const bciSourceData = new BCI2K.bciData();
+
 const bciFilterData = new BCI2K.bciData();
 
 function sleep(n) { return new Promise(resolve=>setTimeout(resolve,n)); }
@@ -12,7 +13,7 @@ function sleep(n) { return new Promise(resolve=>setTimeout(resolve,n)); }
   await bciSourceData.connect("ws://127.0.0.1:20100")
   bciSourceData.onGenericSignal = x => console.log(x);
   await sleep(5000);
-  bciSourceData.disconnect()
+  bciSourceData.disconnect();
   await sleep(5000);
   await bciSourceData.connect("ws://127.0.0.1:20100")
 })()
